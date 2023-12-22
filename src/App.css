@@ -1,38 +1,74 @@
-.App {
-  text-align: center;
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container > div {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.video-box {
+  width: 100%;
+  height: 100vh;
+  position: relative;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.video-box > video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.vid-text-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.vid-text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 5;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 2rem;
+  z-index: 22;
+}
+.vid-text > p {
+  color: white;
+  font-size: 2.2rem;
+  font-weight: 400;
+  letter-spacing: 1;
+}
+.watch {
+  font-size: 2.95rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 2 !important;
+}
+.grid-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  padding: 1rem;
+  gap: 1rem;
+}
+.grid-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: whitesmoke;
+  padding: 0.75rem;
+  flex: 1;
 }
-
-.App-link {
-  color: #61dafb;
+.styled-links {
+  color: rgb(48, 110, 236);
+  text-decoration: none;
+  font-size: 1.2rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.styled-links:hover {
+  text-decoration: underline !important;
 }
